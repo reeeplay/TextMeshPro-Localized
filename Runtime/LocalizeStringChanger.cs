@@ -34,11 +34,13 @@ namespace Windmill {
       var localizedString = new LocalizedString { TableReference = tableReference, TableEntryReference = tableEntryReference };
       localizedString.Arguments = new object[] { arguments };
       localizeStringEvent.StringReference = localizedString;
+      localizeStringEvent.RefreshString();
     }
     
     public void SetLocalizeString(string tableReference, string tableEntryReference) {
       var localizedString = new LocalizedString { TableReference = tableReference, TableEntryReference = tableEntryReference };
       localizeStringEvent.StringReference = localizedString;
+      localizeStringEvent.RefreshString();
     }
     
   }
