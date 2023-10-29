@@ -12,7 +12,6 @@ namespace Windmill {
   public class LocalizeStringChanger : MonoBehaviour {
 
     [HideInInspector] LocalizeStringEvent localizeStringEvent;
-    [HideInInspector] LocalizedString localizedString;
 
     void Awake() {
       localizeStringEvent = gameObject.GetComponent<LocalizeStringEvent>();
@@ -32,13 +31,13 @@ namespace Windmill {
     // }
 
     public void SetLocalizeString(string tableReference, string tableEntryReference, Dictionary<string, object> arguments) {
-      localizedString = new LocalizedString { TableReference = tableReference, TableEntryReference = tableEntryReference };
+      var localizedString = new LocalizedString { TableReference = tableReference, TableEntryReference = tableEntryReference };
       localizedString.Arguments = new object[] { arguments };
       localizeStringEvent.StringReference = localizedString;
     }
     
     public void SetLocalizeString(string tableReference, string tableEntryReference) {
-      localizedString = new LocalizedString { TableReference = tableReference, TableEntryReference = tableEntryReference };
+      var localizedString = new LocalizedString { TableReference = tableReference, TableEntryReference = tableEntryReference };
       localizeStringEvent.StringReference = localizedString;
     }
     
