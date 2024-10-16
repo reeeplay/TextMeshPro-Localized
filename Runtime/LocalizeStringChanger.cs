@@ -11,7 +11,7 @@ namespace Windmill {
 
   public class LocalizeStringChanger : MonoBehaviour {
 
-    [HideInInspector] LocalizeStringEvent localizeStringEvent;
+    [SerializeField] LocalizeStringEvent localizeStringEvent;
 
     void Awake() {
       localizeStringEvent = gameObject.GetComponent<LocalizeStringEvent>();
